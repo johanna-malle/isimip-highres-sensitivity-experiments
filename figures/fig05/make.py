@@ -269,8 +269,8 @@ def draw_quadrants(ax, vmin, vmax):
 def main():
     args = parse_args()
 
-    clim_dir = args.data_dir / "raw" / "fig_5" / "stats_all_climate"
-    model_dir = args.data_dir / "raw" / "fig_3" / "stats_all"
+    clim_dir = args.data_dir / "fig_5" / "stats_all_climate"
+    model_dir = args.data_dir / "fig_3" / "stats_all"
     out_dir = args.out_dir / "fig_5"
     out_dir.mkdir(parents=True, exist_ok=True)
 

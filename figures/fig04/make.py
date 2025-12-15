@@ -102,7 +102,7 @@ def load_summary_table(fig4_dir: Path, species: str = "Larix_decidua") -> pd.Dat
 def main():
     args = parse_args()
 
-    fig4_dir = args.data_dir / "raw" / "fig_4"
+    fig4_dir = args.data_dir / "fig_4"
     out_dir = args.out_dir / "fig_4"
     out_dir.mkdir(parents=True, exist_ok=True)
 

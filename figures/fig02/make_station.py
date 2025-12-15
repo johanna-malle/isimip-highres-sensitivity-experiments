@@ -67,7 +67,7 @@ def colorbar_extend(vals: np.ndarray, vmin: float, vmax: float) -> str:
 def main():
     args = parse_args()
 
-    processed = args.data_dir / "processed" / args.fig_id
+    processed = args.data_dir.parent / "processed" / args.fig_id
     outdir = args.out_dir / args.fig_id
     outdir.mkdir(parents=True, exist_ok=True)
 

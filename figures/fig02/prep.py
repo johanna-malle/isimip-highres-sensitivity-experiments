@@ -120,7 +120,7 @@ def load_case(case_dir: Path, case: str) -> pd.DataFrame:
 def main():
     args = parse_args()
 
-    raw_root = args.data_dir / "fig_2" / "GHCN_data"
+    raw_root = args.data_dir / "raw" / "fig_2" / "GHCN_data"
     pr_dir = raw_root / "comp_data_pr"
     tv_dir = raw_root / "comp_data_tavg"
 
@@ -128,7 +128,7 @@ def main():
         raise FileNotFoundError(f"Expected:\n  {pr_dir}\n  {tv_dir}")
 
 
-    processed = args.data_dir / "processed" / "fig_2"
+    processed = args.data_dir.parent / "processed" / "fig_2"
     processed.mkdir(parents=True, exist_ok=True)
 
     df_pr = load_case(pr_dir, "pr")

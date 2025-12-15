@@ -1,40 +1,61 @@
 # Reproducible figures for:
 ## *When and where higher-resolution climate data improve impact model performance*
 
-This repository contains the **code and data needed to reproduce the figures** in the paper:
+This repository contains the **code and instructions needed to reproduce the figures** in the paper:
 
 > **When and where higher-resolution climate data improve impact model performance**
 
-Each figure is generated from a two-step workflow:
-1) **prep**: convert raw inputs into processed tables used for plotting  
-2) **make**: generate the final figure files
+Figures are organized as **one folder per figure**, and can be generated via:
 
-## What’s in this repository
+- **prep** (optional / where necessary): convert raw inputs into processed tables (CSV) used for plotting
+- **make**: generate the final figure file(s)
 
-- `figures/fig01/ ... fig05/`  
-  One folder per figure, each containing:
-  - `prep.py` (optional): prepares processed inputs
-  - `make.py`: generates the figure(s)
-  - `config.yml`: figure-specific configuration (filenames, settings)
-  - `README.md`: figure-specific instructions
+Scripts can be run either from the command line or directly via “Run” in an IDE.
+All scripts accept `--data-dir` and `--out-dir` where relevant. Outputs are written to `outputs/fig_X/`.
 
-- `data/figXX/raw/`  
-  Published raw inputs required to reproduce the corresponding figure.
+---
 
-- `data/figXX/processed/`  
-  Intermediate products created by `prep.py` (may be regenerated).
+## Repository layout
 
-- `outputs/figXX/`  
-  Generated figures (ignored by git by default).
+- `figures/fig_1/ ... figures/fig_5/`  
+  One folder per figure. Each typically contains:
+  - `make*.py`: generates the figure(s)
+  - `prep.py` (where necessary): creates `data/processed/...` inputs used by `make*.py`
 
-- `src/common/`  
-  Shared helpers (paths, style, metrics) used across figures.
+- `data/raw/fig_X/`  
+  Raw inputs required to reproduce Figure X (download required; see below).
+
+- `data/processed/fig_X/`  
+  Intermediate products created by `prep.py` (not meant to be edited manually).
+
+- `outputs/fig_X/`  
+  Generated figures.
+
+---
 
 ## Data download (required)
 
-Before you can run this repository, the following data needs to be downloaded from **xxx** and extracted into the **yyy** folder.
+Before you can run this repository, the following data needs to be downloaded from **xxx**
+and extracted into the **data/raw/** folder.
 
-> **Note:** The expected layout after extraction should match the `data/figXX/raw/` structure described above.
+After extraction, the expected layout should look like:
+
+- `data/raw/fig_1/...`
+- `data/raw/fig_2/...`
+- `data/raw/fig_3/...`
+- `data/raw/fig_4/...`
+- `data/raw/fig_5/...`
+
+---
+
+## Get the code
+
+Clone the repository and move into it:
+
+```bash
+git clone https://github.com/johanna-malle/isimip-highres-sensitivity-experiments.git
+cd isimip-highres-sensitivity-experiments
+```
 
 ## Requirements
 
@@ -44,4 +65,26 @@ Python is used throughout. The recommended setup is via Conda.
 
 ```bash
 conda env create -f environment.yml
-conda activate paper-figures
+conda activate isimip-highres-figures
+```
+
+### Run the scripts (from the repo root)
+
+```bash
+python figures/fig_1/make.py --data-dir data --out-dir outputs
+
+python figures/fig_2/prep.py --data-dir data
+python figures/fig_2/make_station.py --data-dir data --out-dir outputs
+python figures/fig_2/make_chelsa.py --data-dir data --out-dir outputs
+
+python figures/fig_3/make.py --data-dir data --out-dir outputs
+python figures/fig_3/make_topo_tri.py --data-dir data --out-dir outputs
+
+python figures/fig_4/make.py --data-dir data --out-dir outputs
+
+python figures/fig_5/make.py --data-dir data --out-dir outputs
+```
+
+
+
+

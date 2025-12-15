@@ -15,6 +15,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import xarray as xr
+import matplotlib
+matplotlib.use("Agg")  # headless / no Qt needed
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import cartopy.crs as ccrs

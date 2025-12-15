@@ -15,6 +15,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")  # headless / no Qt needed
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.lines import Line2D

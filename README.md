@@ -71,18 +71,18 @@ conda activate isimip-highres-figures
 ### Run the scripts (from the repo root)
 
 ```bash
-python figures/fig_1/make.py --data-dir data --out-dir outputs
+python figures/fig01/make.py --data-dir data --out-dir outputs
 
-python figures/fig_2/prep.py --data-dir data
-python figures/fig_2/make_station.py --data-dir data --out-dir outputs
-python figures/fig_2/make_chelsa.py --data-dir data --out-dir outputs
+python figures/fig02/prep.py --data-dir data
+python figures/fig02/make_station.py --data-dir data --out-dir outputs
+python figures/fig02/make_chelsa.py --data-dir data --out-dir outputs
 
-python figures/fig_3/make.py --data-dir data --out-dir outputs
-python figures/fig_3/make_topo_tri.py --data-dir data --out-dir outputs
+python figures/fig03/make.py --data-dir data --out-dir outputs
+python figures/fig03/make_topo_tri.py --data-dir data --out-dir outputs
 
-python figures/fig_4/make.py --data-dir data --out-dir outputs
+python figures/fig04/make.py --data-dir data --out-dir outputs
 
-python figures/fig_5/make.py --data-dir data --out-dir outputs
+python figures/fig05/make.py --data-dir data --out-dir outputs
 ```
 
 

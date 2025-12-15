@@ -52,7 +52,7 @@ def main():
     args = parse_args()
 
     chelsa_dir = (
-        args.data_dir / "raw" / "fig_2" / "chelsa_alps_grids"
+        args.data_dir / "fig_2" / "chelsa_alps_grids"
     )
     outdir = args.out_dir / "fig_2"
     outdir.mkdir(parents=True, exist_ok=True)

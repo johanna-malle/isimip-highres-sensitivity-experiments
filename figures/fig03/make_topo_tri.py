@@ -16,6 +16,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import matplotlib
+matplotlib.use("Agg")  # headless / no Qt needed
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 

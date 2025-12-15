@@ -1,0 +1,30 @@
+name: isimip-highres-figures
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+
+  # core numerics / IO
+  - numpy
+  - pandas
+  - scipy
+  - openpyxl
+
+  # plotting
+  - matplotlib
+  - seaborn
+
+  # geospatial + mapping
+  - cartopy
+  - geopandas
+  - pyproj
+  - shapely
+  - fiona
+  - rtree
+
+  # netcdf / xarray stack
+  - xarray
+  - netcdf4
+  - h5netcdf
+  - cftime

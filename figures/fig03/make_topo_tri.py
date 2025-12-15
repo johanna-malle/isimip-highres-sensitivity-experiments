@@ -58,7 +58,7 @@ def read_tri_mean(earthenv_dir: Path, key: str) -> float:
 def main():
     args = parse_args()
 
-    earthenv_dir = args.data_dir / "raw" / "fig_3" / "earthenv"
+    earthenv_dir = args.data_dir / "fig_3" / "earthenv"
     outdir = args.out_dir / "fig_3"
     outdir.mkdir(parents=True, exist_ok=True)
 

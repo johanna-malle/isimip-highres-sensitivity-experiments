@@ -38,15 +38,6 @@ def parse_args():
     return p.parse_args()
 
 
-def _sample_1d(values: np.ndarray, n: int) -> np.ndarray:
-    """Randomly subsample 1D array (deterministic seed) if needed."""
-    values = values[np.isfinite(values)]
-    if n <= 0 or values.size <= n:
-        return values
-    rng = np.random.default_rng(42)
-    idx = rng.choice(values.size, size=n, replace=False)
-    return values[idx]
-
 
 def main():
     args = parse_args()
@@ -115,10 +106,17 @@ def main():
                 np.nanmax(np.abs(rel_diff_30.values)),
             ]))
 
-            vals_1800 = _sample_1d(da_1800.values.ravel(), args.violin_sample)
-            vals_300 = _sample_1d(da_300.values.ravel(), args.violin_sample)
-            vals_90 = _sample_1d(da_90.values.ravel(), args.violin_sample)
-            vals_30 = _sample_1d(da_30.values.ravel(), args.violin_sample)
+            vals_1800 = da_1800.values.ravel()
+            vals_1800 = vals_1800[np.isfinite(vals_1800)]
+
+            vals_300 = da_300.values.ravel()
+            vals_300 = vals_300[np.isfinite(vals_300)]
+
+            vals_90 = da_90.values.ravel()
+            vals_90 = vals_90[np.isfinite(vals_90)]
+
+            vals_30 = da_30.values.ravel()
+            vals_30 = vals_30[np.isfinite(vals_30)]
 
             df_dist = pd.DataFrame({
                 '1800"': vals_1800,

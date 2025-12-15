@@ -121,7 +121,7 @@ def extend_from_limits(all_vals: np.ndarray, vmin: float, vmax: float) -> str:
 def main():
     args = parse_args()
 
-    stats_dir = args.data_dir / "raw" / "fig_3" / "stats_all"
+    stats_dir = args.data_dir / "fig_3" / "stats_all"
     outdir = args.out_dir / "fig_3"
     outdir.mkdir(parents=True, exist_ok=True)
 

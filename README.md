@@ -35,7 +35,7 @@ All scripts accept `--data-dir` and `--out-dir` where relevant. Outputs are writ
 
 ## Data download (required)
 
-Before you can run this repository, the following data needs to be downloaded from[Zenodo (doi:10.5281/zenodo.17940720)](https://doi.org/10.5281/zenodo.17940720)
+Before you can run this repository, the following data needs to be downloaded from [Zenodo (doi:10.5281/zenodo.17940720)](https://doi.org/10.5281/zenodo.17940720)
 and extracted into the **data/raw/** folder.
 
 After extraction, the expected layout should look like:
